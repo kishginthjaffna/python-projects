@@ -35,7 +35,7 @@ To run these projects, make sure you have Python installed. Clone the repository
 
 ```sh
 # Clone the repository
-git clone [https://github.com/kishginthjaffna/python-projects.git](https://github.com/kishginthjaffna/python-projects.git)
+git clone https://github.com/kishginthjaffna/python-projects.git
 cd python-projects
 
 # Then cd to whatever projects you need to see for example
