@@ -19,8 +19,7 @@ A Flappy Bird clone built using Pygame and enhanced with the NEAT algorithm for 
 - **Tech Stack:** Python, Pygame, NEAT-Python
 - **Features:**
   - Playable Flappy Bird game
-  - AI learns to play using the NEAT algorithm
-  - Visualization of AI training progress
+  - AI play flappy bird using the NEAT algorithm
 
 ### 3. 💰 Finance Tracker with Matplotlib & Pandas
 A finance tracker that helps users analyze their expenses and savings using Python's data visualization libraries.
@@ -36,10 +35,13 @@ To run these projects, make sure you have Python installed. Clone the repository
 
 ```sh
 # Clone the repository
-git clone https://github.com/yourusername/Python.git
-cd Python
+git clone [https://github.com/yourusername/Python.git](https://github.com/kishginthjaffna/python-projects.git)
+cd python-projects
 
-# Install required packages
+# Then cd to whatever projects you need to see for example
+cd Flappy Bird
+
+# Then Install required packages (I added requirements.txt)
 pip install -r requirements.txt
 ```
 
@@ -52,4 +54,4 @@ If you have ideas for improvements or want to contribute, feel free to fork the 
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
-Made with ❤️ by [Kishgi](https://github.com/yourusername)
+Made with ❤️ by [Kishgi](https://github.com/kishginthjaffna)
