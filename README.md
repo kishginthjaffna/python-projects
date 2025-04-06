@@ -70,21 +70,6 @@ A real-time chatroom built using Flask that allows users to join, chat, and inte
 
 ---
 
-## 🔧 Installation
-
-To run these projects, make sure you have Python installed. Clone the repository and install dependencies using:
-
-```bash
-# Clone the repository
-git clone https://github.com/kishginthjaffna/python-projects.git
-cd python-projects
-
-# Navigate to the project you want to explore (e.g., Flappy Bird)
-cd FlappyBird
-
-# Install required packages
-pip install -r requirements.txt
-
 
 ## 🔧 Installation
 To run these projects, make sure you have Python installed. Clone the repository and install dependencies using:
