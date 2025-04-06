@@ -1,0 +1,71 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="content">
+  <div class="chat-box">
+    <h2>Chat Room: {{ code }}</h2>
+
+    <div class="chat-messages" id="messages"></div>
+
+    <div class="inputs">
+      <input
+        type="text"
+        placeholder="Message"
+        name="message"
+        id="message-input"
+      />
+      <button type="button" id="send-button" onClick="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    var socketio = io();
+    const messages = document.getElementById("messages");
+  
+    const createMessage = (name, msg, isSystemMessage = false) => {
+      const color = localStorage.getItem(name) || getRandomColor(name); // Apply random color for user
+      const messageClass = isSystemMessage ? "system-message" : "message";
+      
+      const content = `
+        <div class="${messageClass}">
+          <div class="message-header">
+            <span class="username" style="color: ${color};">${name}</span>
+            <span class="timestamp">${new Date().toLocaleString()}</span>
+          </div>
+          <div class="message-content">${msg}</div>
+        </div>
+      `;
+      messages.innerHTML += content;
+      messages.scrollTop = messages.scrollHeight; // auto-scroll to bottom
+    };
+  
+    socketio.on("message", (data) => {
+    const isSystemMessage = !data.message; // Check if it's a system message (entered/left)
+    const message = data.message || `${data.name} has ${data.message || 'entered'} the room`;
+    createMessage(data.name, message, isSystemMessage);
+    });
+
+  
+    const sendMessage = () => {
+      const message = document.getElementById("message-input");
+      if (message.value === "") return;
+      socketio.emit("message", { data: message.value });
+      message.value = "";
+    };
+  
+    // Helper function to generate random colors
+    function getRandomColor(name) {
+      const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#FF9933', '#33FFFF', '#9933FF'];
+      const color = colors[name.length % colors.length]; // Assign color based on name length for consistency
+      localStorage.setItem(name, color); // Store color in localStorage to maintain consistency
+      return color;
+    }
+  </script>
+  
+
+{% for msg in messages %}
+<script type="text/javascript">
+  createMessage("{{msg.name}}", "{{msg.message}}");
+</script>
+{% endfor %}
+{% endblock %}
