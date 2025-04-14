@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Fetcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <h1>📰 News Fetcher</h1>
+
+    <div class="input-section">
+        <input type="text" id="inputField" placeholder="Enter a tech topic (e.g. Docker, AI, GitHub)" />
+        <button id="submitButton" type="button">Fetch</button>
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>Fetching and summarizing news...</p>
+      </div>
+      
+
+    <div id="container">
+        <!-- News summaries will appear here -->
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

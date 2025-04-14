@@ -1,0 +1,5 @@
+flask
+requests
+-qU langchain-groq
+-qU langchain_community beautifulsoup4
+langchain
