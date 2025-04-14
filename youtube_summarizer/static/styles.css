@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@100..900&display=swap');
+
+/* Reset & base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+html {
+    font-family: 'Josefin Sans', sans-serif; /* Apply font to the whole HTML */
+}
+
+/* Apply bounce-in-top animation to all elements */
+* {
+    animation: bounce-in-top 1s ease-in-out; /* Add bounce animation */
+}
+
+/* Bounce-in-top keyframes */
+@-webkit-keyframes bounce-in-top {
+    0% {
+        -webkit-transform: translateY(-500px);
+        transform: translateY(-500px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    38% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+    55% {
+        -webkit-transform: translateY(-65px);
+        transform: translateY(-65px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    72% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    81% {
+        -webkit-transform: translateY(-28px);
+        transform: translateY(-28px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    90% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    95% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes bounce-in-top {
+    0% {
+        -webkit-transform: translateY(-500px);
+        transform: translateY(-500px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    38% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+    55% {
+        -webkit-transform: translateY(-65px);
+        transform: translateY(-65px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    72% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    81% {
+        -webkit-transform: translateY(-28px);
+        transform: translateY(-28px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    90% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    95% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+body {
+    background: #2f2f2f; /* Dark grey background */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+    color: #e0e0e0; /* Light grey text color */
+}
+
+/* Input area */
+#inputField {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 10px;
+    width: 350px; /* Increased width */
+    max-width: 90%;
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+    outline: none;
+    transition: 0.3s ease;
+    background-color: #3a3a3a; /* Darker input background */
+    color: #fff;
+}
+
+#inputField:focus {
+    box-shadow: 0 0 10px #fff;
+    background-color: #505050; /* Slightly lighter when focused */
+}
+
+/* Submit button */
+#submitButton {
+    margin: 20px;
+    padding: 14px 28px;
+    background-color: #00796b; /* Teal color */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#submitButton:hover {
+    background-color: #004d40; /* Darker teal on hover */
+    transform: translateY(-3px); /* Slight button lift on hover */
+}
+
+#submitButton:active {
+    transform: translateY(1px); /* Button pressed effect */
+}
+
+/* Summary container */
+#container {
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 800px;
+    width: 90%;
+    font-size: 18px;
+    line-height: 1.8;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: none;
+    animation: fadeIn 0.6s ease-in-out forwards;
+    color: #d4d4d4; /* Slightly lighter text inside container */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 600px) {
+    body {
+        padding: 1.5rem;
+    }
+
+    #inputField {
+        width: 100%;
+        padding: 12px 18px;
+    }
+
+    #submitButton {
+        width: 100%;
+        padding: 12px 18px;
+    }
+
+    #container {
+        width: 100%;
+        font-size: 16px;
+    }
+}
